@@ -1,0 +1,48 @@
+<settings>
+  <font>georgia</font>
+  <thousands_separator>,</thousands_separator>
+  <decimals_separator>.</decimals_separator>
+  <digits_after_decimal>0</digits_after_decimal>
+  <background>
+    <alpha>100</alpha>
+    <border_color>999999</border_color>
+    <border_alpha>100</border_alpha>
+  </background>
+  <balloon>
+    <color>999999</color>
+    <corner_radius>8</corner_radius>
+    <border_color>666666</border_color>
+  </balloon>
+  <legend>
+    <enabled>0</enabled>
+    <align>center</align>
+  </legend>
+  <pie>
+    <y>50%</y>
+    <inner_radius>30</inner_radius>
+    <outline_color>FF6600</outline_color>
+    <outline_alpha>100</outline_alpha>
+    <base_color>FF6600</base_color>
+    <gradient>radial</gradient>
+    <gradient_ratio>0,-20</gradient_ratio>
+  </pie>
+  <animation>
+    <start_time>1</start_time>
+    <start_effect>regular</start_effect>
+    <start_radius>100%</start_radius>
+    <pull_out_time>0.5</pull_out_time>
+    <pull_out_effect>regular</pull_out_effect>
+    <pull_out_only_one>1</pull_out_only_one>
+  </animation>
+  <data_labels>
+    <show>{title}: {value}</show>
+    <max_width>140</max_width>
+  </data_labels>
+  <labels>
+    <label lid="0">
+      <text>Current Activity Breakdown</text>
+      <text_size>14</text_size>
+      <align>center</align>
+    </label>
+  </labels>
+</settings>

@@ -1,0 +1,13 @@
+@media screen, projection {
+                            
+  div#photos                {overflow:auto;}
+  div.photo                 {float:left; display:inline; margin:0 20px 20px 0;}
+  div.photo a img           {border:1px solid; padding:1px;}
+  p#turtles_caption         {margin:5px 0 0;}
+  
+  div#text a                {font-weight:bold;}
+  
+  div#zoom h2               {margin:10px 0 10px;}
+  div#zoom p                {line-height:1.6;}
+
+}

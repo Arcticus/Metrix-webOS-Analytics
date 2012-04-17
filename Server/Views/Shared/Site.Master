@@ -1,0 +1,155 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="http://www.webosroundup.com/GlobalV3.css" rel="stylesheet" type="text/css" />
+    <META name="keywords" content="webos analytics, webos dev tools, webos dev, webos" />
+    <META name="description" content="Metrix is a set of tools for webOS developers to help them track their apps and take control." />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="../../Content/ie.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body>
+<div id="WORHeader">
+     <div id="WORHeaderContent">
+            <a href="http://www.webosroundup.com"><img src="http://www.webosroundup.com/Images/WORLogo.png" alt="webOSroundup" class="logo" style="float: left;" /></a>
+            <div id="WORMenu">
+                <a href="http://answers.webosroundup.com"><img src="http://www.webosroundup.com/ImagesV3/WORMenuQA.png" alt="webOS Q&A" style="" /></a>
+                <a href="http://apps.webosroundup.com"><img src="http://www.webosroundup.com/ImagesV3/WORMenuSpotlight.png" alt="appSpotlight" style="" /></a>
+                <a href="http://metrix.webosroundup.com"><img src="http://www.webosroundup.com/ImagesV3/WORMenuMetrix.png" alt="Metrix" style="" /></a>
+                <a href="http://appmill.webosroundup.com"><img src="http://www.webosroundup.com/ImagesV3/WORMenuAppMill.png" alt="App Mill" style="" /></a>
+                <a href="http://forum.webosroundup.com"><img src="http://www.webosroundup.com/ImagesV3/WORMenuForums.png" alt="Forums" style="" /></a>
+                <a href="http://www.webosroundup.com/about"><img src="http://www.webosroundup.com/ImagesV3/WORMenuAbout.png" alt="About" style="" /></a>
+                <a href="http://www.webosroundup.com/contact"><img src="http://www.webosroundup.com/ImagesV3/WORMenuContact.png" alt="Contact" style="" /></a>
+                <a href="http://www.webosroundup.com/tips"><img src="http://www.webosroundup.com/ImagesV3/WORMenuTip.png" alt="Tip Us" style="" /></a>                
+            </div>
+        </div>
+</div>
+<div id="page">
+	<div id="header">
+		<div class="menu">
+		    <a href="/"><img src="../../Images/menuHomeOver.png" alt="Home" style="<%=ViewData["MenuHome"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuHome"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuHome"] %>')" /></a>
+		    <a href="/Features"><img src="../../Images/menuFeaturesOver.png" alt="Features" style="<%=ViewData["MenuFeatures"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuFeatures"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuFeatures"] %>')" /></a>
+		    <a href="/Signup"><img src="../../Images/menuSignup.png" alt="Signup" style="<%=ViewData["MenuSignup"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuSignup"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuSignup"] %>')" /></a>
+		    <a href="/Support"><img src="../../Images/menuSupportOver.png" alt="Support" style="<%=ViewData["MenuSupport"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuSupport"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuSupport"] %>')" /></a>
+		    <a href="/Contact"><img src="../../Images/menuContactOver.png" alt="Contact" style="<%=ViewData["MenuContact"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuContact"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuContact"] %>')" /></a>
+		</div>
+		<div id="logo">
+		    <img src="../../Images/logo.png" alt="Metrix: Take control of your app" />
+		</div>
+	    <%  if (Session["UserID"] == null)
+         { %>
+                <%Html.BeginForm("Login", "Home", null, FormMethod.Post); %>
+                <div id="loginLabel">
+	                <img src="../../Images/loginLabel.png" alt="Login" />
+	            </div>
+	            <div id="loginTextbox">
+	                <%=Html.TextBox("txtLogin")%><br />
+	                <%=Html.Password("txtPassword")%>
+	            </div>
+	            <div id="loginButton">
+	                <button type="submit" class="loginButton" name="btnLogin"><img src="../../Images/loginButton.png" alt="Login" /></button>
+	            </div>
+	            <span class="loginStatus"><%=ViewData["LoginStatus"]%></span>
+	            <%Html.EndForm(); %>
+	    <%  }
+            else
+            {
+                if (((List<CommandLibrary.UserUserType>) Session["UserTypes"]).Where(i => i.UserType.Name == CommandLibrary.Constants.UserTypes.Admin ).Count() > 0)
+                {%>
+                    <div class="menu devMenu">
+		                <a href="/Admin/Apps"><img src="../../Images/menuAdminApps.png" alt="Apps" style="<%=ViewData["MenuAdminApps"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuAdminApps"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuAdminApps"] %>')" /></a>
+                        <a href="/Admin/AdStorm"><img src="../../Images/menuAdminAdStorm.png" alt="Apps" style="<%=ViewData["MenuAdminAdStorm"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuAdminAdStorm"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuAdminAdStorm"] %>')" /></a>
+		                <a href="/Profile/Update"><img src="../../Images/menuAdminProfile.png" alt="Profile" style="<%=ViewData["MenuAdminProfile"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuAdminProfile"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuAdminProfile"] %>')" /></a>
+		                <a href="/Logout"><img src="../../Images/menuAdminLogout.png" alt="Logout" style="<%=ViewData["MenuLogout"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuLogout"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuLogout"] %>')" /></a>
+		            </div>
+        <%      }
+                else
+                { %>
+                    <div class="menu devMenu">
+		                <a href="/Apps/List"><img src="../../Images/menuApps.png" alt="Apps" style="<%=ViewData["MenuApps"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuApps"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuApps"] %>')" /></a>
+		                <a href="/Profile/Update"><img src="../../Images/menuProfile.png" alt="Profile" style="<%=ViewData["MenuProfile"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuProfile"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuProfile"] %>')" /></a>
+		                <a href="/Library/Download"><img src="../../Images/menuDownload.png" alt="Profile" style="<%=ViewData["MenuDownload"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuDownload"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuDownload"] %>')" /></a>
+		                <a href="/Logout"><img src="../../Images/menuLogout.png" alt="Logout" style="<%=ViewData["MenuLogout"] %>" onmouseover="MenuMouseOver(this, '<%=ViewData["MenuLogout"] %>')" onmouseout="MenuMouseOut(this, '<%=ViewData["MenuLogout"] %>')" /></a>
+		            </div>
+		<%      }
+            } %>
+	</div>
+	<div id="body">
+	    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+	</div>
+	
+    <div id="footer"> 
+        <div style="float:right; margin-right: 30px;">
+            <a href="http://www.webosroundup.com"><img src="../../Images/footerWOR.png" style="display: block; float: left; margin-right: 20px; margin-top: 5px" /></a>
+            <a href="http://www.twitter.com/webosroundup"><img src="http://www.webosroundup.com/wp-content/themes/version2/images/iconTwitter.png" /></a>
+            <a href="http://feeds.feedburner.com/webosroundup"><img src="http://www.webosroundup.com/wp-content/themes/version2/images/iconRSS.png" /></a>
+            <a href="http://www.facebook.com/pages/webosroundup"><img src="http://www.webosroundup.com/wp-content/themes/version2/images/iconFacebook.png" /></a>
+
+        </div>
+        <div id="footerText">
+            <a style="float:left; margin-right: 20px;" href="http://www.visionaryonline.com"><img src="http://www.webosroundup.com/wp-content/themes/version2/images/VOlogo.png" /></a> 
+            <a style="float:left; margin-right: 20px;" href="http://www.gosyntactix.com"><img src="../../Images/syntactix.png" /></a> 
+            <div style="margin-top: 10px; float:left;">
+                Copyright &copy; 2010, <a href="http://www.visionaryonline.com">Visionary Online</a>  |
+                <a href="http://www.gosyntactix.com">Syntactix</a> | 
+                <a href="http://metrix.webosroundup.com/privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Clicky -->
+<script src="http://static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">    clicky.init(222657);</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/222657ns.gif" /></p></noscript>
+
+
+<!-- Google -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8590775-11']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<script type="text/javascript">
+    function MenuMouseOver(element, style) {
+        if (style == null || style == "") {
+            element.style.opacity = 1;
+        }
+    }
+
+    function MenuMouseOut(element, style) {
+        if (style == null || style == "") {
+            element.style.opacity = .5;
+        }
+    }
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8590775-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+</body>
+</html>

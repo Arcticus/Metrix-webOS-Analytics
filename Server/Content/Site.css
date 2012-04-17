@@ -1,0 +1,219 @@
+﻿body
+{
+	background: #a5a5a5 url('../Images/bgMain.png') repeat-x;
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica;
+	color: #666666;
+}
+
+#page
+{
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fff;
+	
+}
+
+a
+{
+	color: #ff6600;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+p
+{
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.spacedParagraph
+{
+	padding-top: 20px;
+}
+
+#header
+{
+	background: url('../Images/header.jpg') no-repeat;
+	height: 169px;
+	width: 950px;
+}
+
+#body
+{
+	background: #fff;
+	min-height: 400px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.menu
+{
+	width: 99px;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.menu img
+{
+	margin-bottom: -5px;
+	opacity: .5;
+}
+
+.devMenu
+{
+	position: absolute;
+	margin-top: -140px;
+	margin-left: 810px;
+}
+
+#logo
+{
+	position: absolute;
+	margin-top: -120px;
+	margin-left: 180px;
+}
+
+#loginLabel
+{
+	position: absolute;
+	margin-left: 670px;
+	margin-top: -100px;
+}
+
+#loginTextbox
+{
+	position: absolute;
+	margin-left: 720px;
+	margin-top: -100px;
+}
+
+#loginButton
+{
+	position: absolute;
+	margin-left: 875px;
+	margin-top: -100px;
+}
+
+.loginButton
+{
+	background: transparent;
+	border: none;
+	width: 55px;
+	height: 50px;
+}
+
+.loginStatus
+{
+	position: absolute;
+	margin-left: 720px;
+	margin-top: -70px;
+	font-size: 12pt;
+	color: red;
+}
+
+img { border: none;}
+
+.bigText
+{
+	font-size: 22pt;
+	font-family: helvetica, georgia, arial;
+}
+
+.mediumText
+{
+	font-size: 18pt;
+	line-height: 1.5em;
+}
+.smallText
+{
+	font-size: 12pt;
+	line-height: 1.6em;
+}
+
+.bigTextbox
+{
+	font-size: 18pt;
+	width: 300px;
+}
+
+.bigButton
+{
+	font-size: 18pt;
+	padding: 5px 10px 5px 10px;
+}
+
+.smallButton
+{
+	font-size: 12pt;
+	padding: 5px 10px 5px 10px;
+}
+
+.status
+{
+	color: Red;
+	font-size: 18pt;
+}
+
+.bulletin
+{
+	border: solid 1px #ccc;
+	background: #fcfcfc;
+	padding: 4px;
+	margin-bottom: 5px;
+}
+
+#footer
+{
+	background: #000 url('../Images/footer.jpg') no-repeat;
+	width: 930px;
+	height: 146px;
+	padding-top: 22px;
+	padding-left: 20px;
+	font-family: verdana;
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #ccc;
+}
+
+#footer a
+{
+	color: #aaa;
+}
+
+#footerText
+{
+	margin-top: 70px;
+}
+
+.analyticGraphs
+{
+	float: right;
+	margin-right: 20px;
+}
+
+.errorBox
+{
+    border-top: solid 2px #c00;
+    padding-top: 10px;
+    color: #c00;
+}
+
+.tooltip{
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 300;
+   display: none;
+   font-size: 10pt;
+   width: 300px;
+}
+            

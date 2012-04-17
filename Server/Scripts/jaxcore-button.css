@@ -1,0 +1,21 @@
+A.button {display:inline-block; font-family:Lucida Grande, Tahoma, sans-serif; white-space:nowrap; cursor:pointer; color:#000; font-size:9pt; margin-left:0px; margin-right:1px; text-decoration:none; padding:3px; padding-left:8px; padding-right:8px; outline:none; color:#222; background-color:#e2e4e8; background-image:url(../Images/gradient.png); background-position:center center; background-repeat:repeat-x; border-left:1px solid #cacaca; border-top:1px solid #cacaca; border-bottom:1px solid #b0b0b0; border-right:1px solid #b0b0b0; -moz-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px; -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px; -moz-border-radius:6px; -webkit-border-radius:6px;}
+A.button_down {display:inline-block; font-family:Lucida Grande, Tahoma, sans-serif; cursor:pointer; color:#000; font-size:9pt; text-decoration:none; padding:3px; padding-left:8px; padding-right:8px; outline:none; color:#222; background-color:#e2e4e8; background-image:url(../Images/gradient-down.png); background-position:center center; background-repeat:repeat-x; border-left:1px solid #888; border-top:1px solid #888; border-bottom:1px solid #555; border-right:1px solid #555; margin-left:1px; margin-right:0px; -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px; -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px; -moz-border-radius:6px; -webkit-border-radius:6px;}
+A.button:hover {border-top-color:#bababa; border-left-color:#bababa; border-bottom-color:#909090; border-right-color:#909090; -moz-box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px; -webkit-box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px; background-image:url(../Images/gradient-hover.png);}
+A.button:focus {border-top-color:#888; border-left-color:#888; border-bottom-color:#555; border-right-color:#555; -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 4px; -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 4px; }
+
+A.button > SPAN {white-space:nowrap;}
+
+A.button > SPAN, A.button_down > SPAN {opacity:0.9;}
+A.button:hover > SPAN {opacity:1;}
+A.button_down > SPAN {opacity:1;}
+
+A.button_large {font-size:11pt; padding:7px; padding-left:12px; padding-right:12px; -moz-box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 3px; -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 3px; -moz-border-radius:9px; -webkit-border-radius:9px;}
+A.button_small {font-size:8pt; padding:2px; padding-left:4px; padding-right:4px; -moz-box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 2px; -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 2px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+A.button_tiny {font-size:7pt;  padding:1px; padding-left:2px; padding-right:2px; -moz-box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 2px; -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 2px; -moz-border-radius:4px; -webkit-border-radius:4px;}
+
+A.button_disabled {background:#ddd; border:1px solid #ccc; opacity:0.8; -moz-box-shadow:none; -webkit-box-shadow:none; background:#e2e4e8;}
+A.button_disabled > SPAN {opacity:0.6;}
+A.button_disabled:hover {cursor:pointer; border:1px solid #ccc; -moz-box-shadow:none; -webkit-box-shadow:none; background:#e2e4e8;}
+A.button_disabled:hover > SPAN {opacity:0.6;}
+A.button_disabled:focus {cursor:pointer; border:1px solid #ccc; -moz-box-shadow:none; -webkit-box-shadow:none;}
+A.button_disabled:focus > SPAN {opacity:0.6;}
